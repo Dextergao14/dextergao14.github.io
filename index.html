@@ -3,57 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wentao Gao | PhD Student, Builder, Researcher</title>
-  <meta name="description" content="Wentao Gao — Computer Science PhD student at UTA, building at the intersection of AI research, systems, and startup execution." />
+  <title>Wentao Gao | AI Researcher, Engineer, Builder</title>
+  <meta name="description" content="Wentao Gao — PhD student in Computer Science at UT Arlington. AI researcher and engineer working across agentic AI, multimodal evaluation, reinforcement learning, systems, and product-building." />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #121931;
-      --card: rgba(255,255,255,0.06);
-      --text: #e8ecf8;
-      --muted: #aab4d0;
-      --line: rgba(255,255,255,0.12);
-      --brand: #7cc6ff;
-      --brand2: #93ffcf;
-      --max: 1120px;
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --bg: #0a0f1e;
+      --bg2: #111a32;
+      --card: rgba(255,255,255,0.055);
+      --line: rgba(255,255,255,0.11);
+      --text: #eef2ff;
+      --muted: #b1bddf;
+      --brand: #82c9ff;
+      --brand2: #8cf4c8;
+      --accent: #ffd580;
+      --max: 1160px;
+      --shadow: 0 24px 70px rgba(0,0,0,0.35);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(124,198,255,0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(147,255,207,0.14), transparent 28%),
-        linear-gradient(180deg, #09101f 0%, #0b1020 100%);
+        radial-gradient(circle at 0% 0%, rgba(130,201,255,0.17), transparent 28%),
+        radial-gradient(circle at 100% 0%, rgba(140,244,200,0.12), transparent 28%),
+        linear-gradient(180deg, #09101f 0%, #0a0f1e 100%);
     }
 
     a { color: inherit; text-decoration: none; }
-    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .container { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
 
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(11,16,32,0.62);
+      z-index: 30;
+      backdrop-filter: blur(16px);
+      background: rgba(10,15,30,0.7);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       padding: 14px 0;
-      gap: 16px;
+      gap: 18px;
     }
 
     .brand {
       font-weight: 800;
-      letter-spacing: 0.2px;
+      letter-spacing: .2px;
+      font-size: 15px;
     }
 
     .nav-links {
@@ -65,14 +67,13 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 78px 0 32px;
     }
 
-    .hero-grid {
+    .hero-wrap {
       display: grid;
-      grid-template-columns: 1.35fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: 1.35fr .85fr;
+      gap: 20px;
     }
 
     .card {
@@ -83,27 +84,27 @@
     }
 
     .hero-main {
-      padding: 42px;
+      padding: 38px;
     }
 
-    .eyebrow {
+    .pill {
       display: inline-flex;
-      align-items: center;
       gap: 8px;
+      align-items: center;
       padding: 7px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(124,198,255,0.2);
-      background: rgba(124,198,255,0.08);
-      color: #d7efff;
+      background: rgba(130,201,255,0.1);
+      border: 1px solid rgba(130,201,255,0.18);
+      color: #d9efff;
       font-size: 13px;
       margin-bottom: 18px;
     }
 
     h1 {
       margin: 0 0 14px;
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.04;
-      letter-spacing: -0.03em;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
     }
 
     .gradient {
@@ -115,99 +116,78 @@
 
     .lead {
       margin: 0;
-      max-width: 760px;
       color: var(--muted);
       font-size: 18px;
+      max-width: 780px;
     }
 
-    .cta-row {
+    .hero-actions {
+      margin-top: 22px;
       display: flex;
-      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
       padding: 12px 18px;
       border-radius: 14px;
       font-weight: 700;
       border: 1px solid var(--line);
-      transition: 0.18s ease;
+      transition: transform .18s ease, opacity .18s ease;
     }
 
-    .btn.primary {
-      background: linear-gradient(135deg, #77c8ff, #8dffcf);
-      color: #07101a;
-      border: none;
-    }
-
-    .btn.secondary {
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-    }
-
-    .btn:hover { transform: translateY(-1px); opacity: 0.96; }
+    .btn:hover { transform: translateY(-1px); opacity: .96; }
+    .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand2)); color: #05111d; border: none; }
+    .btn.secondary { background: rgba(255,255,255,0.03); }
 
     .hero-side {
-      padding: 26px;
+      padding: 22px;
       display: grid;
-      gap: 16px;
+      gap: 14px;
       align-content: start;
     }
 
-    .stat {
-      padding: 18px;
-      border-radius: 18px;
+    .mini-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 18px;
     }
 
-    .stat-label {
+    .mini-label {
       color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 8px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
+      font-size: 12px;
+      margin-bottom: 8px;
     }
 
-    .stat-value {
-      font-size: 24px;
+    .mini-value {
+      font-size: 23px;
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.22;
     }
 
-    section {
-      padding: 18px 0 22px;
-    }
-
+    section { padding: 16px 0 20px; }
+    .section-head { margin-bottom: 18px; }
     .section-title {
-      font-size: 28px;
-      margin: 0 0 14px;
-      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: -0.03em;
     }
+    .section-copy { margin: 0; color: var(--muted); max-width: 820px; }
 
-    .section-copy {
-      color: var(--muted);
-      margin: 0 0 22px;
-      max-width: 760px;
-    }
-
-    .grid-3, .grid-2 {
-      display: grid;
-      gap: 18px;
-    }
-
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2, .grid-3 { display: grid; gap: 18px; }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
 
     .info-card {
       padding: 22px;
       border-radius: 20px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.045);
       border: 1px solid var(--line);
     }
 
@@ -216,79 +196,124 @@
       font-size: 18px;
     }
 
-    .info-card p, .info-card li {
-      margin: 0;
-      color: var(--muted);
-    }
+    .muted { color: var(--muted); }
+    .tight { margin: 0; }
+    .list { margin: 0; padding-left: 18px; color: var(--muted); }
+    .list li + li { margin-top: 8px; }
 
-    .list {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .project-title {
+    .tag-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 8px;
     }
 
     .tag {
       display: inline-flex;
-      padding: 5px 10px;
+      padding: 7px 11px;
       border-radius: 999px;
-      background: rgba(124,198,255,0.12);
-      color: #cbeaff;
-      font-size: 12px;
-      border: 1px solid rgba(124,198,255,0.16);
+      font-size: 13px;
+      background: rgba(130,201,255,0.1);
+      color: #d6efff;
+      border: 1px solid rgba(130,201,255,0.15);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--line);
+    }
+
+    .role-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .role-time {
+      color: var(--accent);
+      font-size: 14px;
       white-space: nowrap;
     }
 
-    .pub-item {
+    .role-org {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .research-item, .project-item {
       padding: 20px 22px;
       border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.1);
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
     }
 
-    .pub-item strong {
+    .research-item strong, .project-item strong {
       display: block;
-      margin-bottom: 6px;
       font-size: 17px;
+      margin-bottom: 8px;
     }
 
-    .pub-meta {
-      color: var(--muted);
+    .research-meta {
+      color: var(--accent);
       font-size: 14px;
-    }
-
-    .footer {
-      padding: 42px 0 70px;
-      color: var(--muted);
-      font-size: 14px;
+      margin-bottom: 8px;
     }
 
     .contact-box {
       padding: 28px;
     }
 
-    .contact-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
       margin-top: 18px;
     }
 
-    @media (max-width: 920px) {
-      .hero-grid, .grid-3, .grid-2 {
+    .contact-item {
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .contact-item .k {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      color: var(--muted);
+      padding: 36px 0 70px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 940px) {
+      .hero-wrap, .grid-2, .grid-3, .contact-grid {
         grid-template-columns: 1fr;
       }
-      .hero { padding-top: 52px; }
-      .hero-main { padding: 28px; }
-      .hero-side { padding: 18px; }
-      .nav-inner { align-items: flex-start; flex-direction: column; }
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-main, .hero-side, .contact-box { padding: 24px; }
     }
   </style>
 </head>
@@ -298,9 +323,10 @@
       <div class="brand">Wentao Gao</div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#research">Research</a>
         <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -308,155 +334,319 @@
 
   <main>
     <section class="hero container">
-      <div class="hero-grid">
+      <div class="hero-wrap">
         <div class="card hero-main">
-          <div class="eyebrow">UTA Computer Science · PhD Student</div>
+          <div class="pill">PhD Student at UT Arlington · AI Researcher · Engineer · Builder</div>
           <h1>
-            Building at the intersection of
-            <span class="gradient">AI research, systems, and real-world products</span>
+            I build <span class="gradient">AI systems that actually ship</span> — from multimodal evaluation engines and reinforcement learning to distributed systems and product prototypes.
           </h1>
           <p class="lead">
             I'm Wentao Gao, a Computer Science PhD student at the University of Texas at Arlington.
-            My work spans deep learning, reinforcement learning, agentic AI, multimodal evaluation,
-            computer vision, robotics, and data-centric systems — with one foot in research and the other in building.
+            My background crosses research, product engineering, and startup-style execution: agentic AI, MLLM evaluation, RL, computer vision, robotics, distributed systems, and developer infrastructure.
           </p>
-          <div class="cta-row">
-            <a class="btn primary" href="https://github.com/dextergao14" target="_blank" rel="noreferrer">View GitHub</a>
-            <a class="btn secondary" href="#contact">Work With Me</a>
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:wentaog1477@gmail.com">Email Me</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/wentao-dexter-gao/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn secondary" href="https://github.com/Dextergao14/" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
 
         <div class="card hero-side">
-          <div class="stat">
-            <div class="stat-label">Focus Areas</div>
-            <div class="stat-value">Agentic AI, RL, CV, Robotics</div>
+          <div class="mini-card">
+            <div class="mini-label">Currently</div>
+            <div class="mini-value">PhD in Computer Science @ UTA</div>
           </div>
-          <div class="stat">
-            <div class="stat-label">Builder Mode</div>
-            <div class="stat-value">Research + Startup Execution</div>
+          <div class="mini-card">
+            <div class="mini-label">Strongest Themes</div>
+            <div class="mini-value">Agentic AI, MLLM Eval, RL, CV, Systems</div>
           </div>
-          <div class="stat">
-            <div class="stat-label">GitHub Highlights</div>
-            <div class="stat-value">Distributed Systems, 4D LLM Eval, BEV Research</div>
+          <div class="mini-card">
+            <div class="mini-label">Past Experience</div>
+            <div class="mini-value">HiThink, HDR, Tencent, ByteDance, Meituan, Stoneye, Gensler</div>
           </div>
         </div>
       </div>
     </section>
 
     <section id="about" class="container">
-      <h2 class="section-title">About</h2>
-      <p class="section-copy">
-        I care about building things that are technically serious and practically useful.
-        That means publishing research when needed, but also shipping prototypes, evaluation frameworks,
-        and systems that move fast enough to matter.
-      </p>
+      <div class="section-head">
+        <h2 class="section-title">About</h2>
+        <p class="section-copy">
+          I'm interested in hard technical problems that sit between research novelty and real product constraints.
+          That includes evaluation infrastructure for modern AI systems, embodied or perception-heavy ML, distributed backends, and tools that help teams ship faster.
+        </p>
+      </div>
       <div class="grid-3">
         <div class="info-card">
-          <h3>What I work on</h3>
-          <p>Deep learning, reinforcement learning, agentic AI, multimodal evaluation and benchmarking, computer vision, robotics, data science, and causal inference.</p>
+          <h3>Research angle</h3>
+          <p class="muted tight">Deep learning, reinforcement learning, computer vision, MLLM benchmarking, robotics perception, and RF-aware sensing.</p>
         </div>
         <div class="info-card">
-          <h3>How I think</h3>
-          <p>I like clean problem framing, strong technical depth, and building artifacts that make research more reproducible and more usable.</p>
+          <h3>Engineering angle</h3>
+          <p class="muted tight">Java, Python, C/C++, Scala, Dart, distributed systems, compiler work, cloud pipelines, and end-to-end product implementation.</p>
         </div>
         <div class="info-card">
-          <h3>What I'm looking for</h3>
-          <p>Research collaborations, startup conversations, internships, and technical opportunities where rigor and execution both matter.</p>
+          <h3>Career angle</h3>
+          <p class="muted tight">Open to research collaborations, AI engineering roles, startup conversations, and technically ambitious internships/full-time opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="container">
+      <div class="section-head">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-copy">A practical stack shaped by both research and product work.</p>
+      </div>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3>Programming</h3>
+          <div class="tag-row">
+            <span class="tag">Java</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Dart</span><span class="tag">C#</span><span class="tag">C/C++</span><span class="tag">Scala</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <h3>Frameworks & Tools</h3>
+          <div class="tag-row">
+            <span class="tag">Spring</span><span class="tag">PyTorch</span><span class="tag">NumPy</span><span class="tag">Keras</span><span class="tag">OpenCV</span><span class="tag">RPC</span><span class="tag">CARLA</span><span class="tag">Unity</span><span class="tag">Unreal</span><span class="tag">vLLM</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <h3>Cloud & Data</h3>
+          <div class="tag-row">
+            <span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="info-card">
+          <h3>Courses & Teaching</h3>
+          <p class="muted tight">Deep Learning, Reinforcement Learning, Computer Vision, Computer Graphics, Distributed Systems, Compilers. Teaching Assistant for Computer Architecture & Organization and Programming Language Design.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="container">
+      <div class="section-head">
+        <h2 class="section-title">Education</h2>
+        <p class="section-copy">A mix of computer science, systems, design, and applied problem solving.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">University of Texas at Arlington</div>
+            <div class="role-time">Aug 2024 – May 2027 (Expected)</div>
+          </div>
+          <div class="role-org">Ph.D. in Computer Science · Arlington, TX</div>
+        </div>
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Georgia Institute of Technology</div>
+            <div class="role-time">Jan 2023 – May 2024</div>
+          </div>
+          <div class="role-org">M.S. in Computer Science · Atlanta, GA</div>
+        </div>
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Columbia University</div>
+            <div class="role-time">Sep 2017 – May 2020</div>
+          </div>
+          <div class="role-org">Master of Architecture · New York, NY</div>
+        </div>
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Sun Yat-sen University</div>
+            <div class="role-time">Sep 2012 – Jun 2017</div>
+          </div>
+          <div class="role-org">Bachelor of Engineering · Guangzhou, China</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="container">
+      <div class="section-head">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-copy">Research, engineering, and product work across labs, startups, and large companies.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">AI Research Scientist Intern</div>
+            <div class="role-time">Jun 2025 – Aug 2025</div>
+          </div>
+          <div class="role-org">HiThink Research · Hangzhou, China</div>
+          <ul class="list">
+            <li>Main contributor to <strong>GAGE</strong>, a General AI Gauge Engine for MLLM evaluation.</li>
+            <li>Integrated benchmarks including LiveCodeBench, SWE Bench, and Humanity’s Last Exam into a unified evaluation workflow.</li>
+            <li>Standardized open-source datasets into JSON pipelines and used both exact accuracy and LLM-as-a-judge metrics.</li>
+            <li>Built subprocess-based execution pipelines for Python coding tasks and sandboxed compiler flows for Java/C++ evaluation.</li>
+            <li>Built MCP Server & Client components for agentic evaluation and RPC function design.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Machine Learning Engineer Intern</div>
+            <div class="role-time">Apr 2025 – Jun 2025</div>
+          </div>
+          <div class="role-org">HDR · Dallas, TX, USA</div>
+          <ul class="list">
+            <li>Trained an in-house model on private data and cloud infrastructure for industry-domain solution generation.</li>
+            <li>Reached <strong>94.7% test accuracy</strong> on the internal evaluation split.</li>
+            <li>Organized and preprocessed expert-annotated GT data into private PaaS/Snowflake workflows.</li>
+            <li>Implemented caching and fuzzy search on historical data to improve downstream user experience.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Software Engineer Intern</div>
+            <div class="role-time">May 2024 – Sep 2024</div>
+          </div>
+          <div class="role-org">Tencent Docs · Shenzhen, China</div>
+          <ul class="list">
+            <li>Worked on desktop app device management.</li>
+            <li>Built around distributed-consensus-style guarantees, including monotonic-write implementation ideas.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Research Scientist Intern</div>
+            <div class="role-time">Feb 2024 – May 2024</div>
+          </div>
+          <div class="role-org">ByteDance Research · Shanghai, China</div>
+          <ul class="list">
+            <li>Worked on robotics perception and model-free reinforcement learning for humanoid stance and gesture control.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Machine Learning Engineer Intern</div>
+            <div class="role-time">Sep 2023 – Feb 2024</div>
+          </div>
+          <div class="role-org">Meituan · Beijing, China</div>
+          <ul class="list">
+            <li>Worked on a VLM-DiT based digital human pipeline for live-streaming scenarios.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Software Engineer Intern</div>
+            <div class="role-time">May 2023 – Sep 2023</div>
+          </div>
+          <div class="role-org">Stoneye.ai · Sunnyvale, CA, USA</div>
+          <ul class="list">
+            <li>Part of the founding team behind <strong>TinyTalk</strong>, a multimedia storytelling app for parents and children using generative AI models.</li>
+            <li>Contributed in Flutter to streamline cross-platform deployment.</li>
+            <li>Helped ship to iOS and Android, growing from zero to <strong>100k users</strong> with <strong>80%+ retention</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="role-line">
+            <div class="role-title">Technical Designer</div>
+            <div class="role-time">Jun 2020 – May 2023</div>
+          </div>
+          <div class="role-org">Gensler · San Jose, CA, USA</div>
+          <ul class="list">
+            <li>Built internal automation tooling in C#.</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section id="research" class="container">
-      <h2 class="section-title">Research Interests</h2>
-      <p class="section-copy">A few themes that show up repeatedly in my work.</p>
+      <div class="section-head">
+        <h2 class="section-title">Research</h2>
+        <p class="section-copy">Research themes spanning autonomous systems, embodied perception, AI tooling, and wireless sensing.</p>
+      </div>
       <div class="grid-2">
-        <div class="info-card">
-          <h3>Foundation & Agent Systems</h3>
-          <ul class="list">
-            <li>Agentic AI systems and evaluation</li>
-            <li>LLM / MLLM benchmarking infrastructure</li>
-            <li>Decision-making under uncertainty</li>
-          </ul>
+        <div class="research-item">
+          <strong>ReScene: Novel Scene Reconstruction for Bandwidth-Adaptive Cloud-Aided Autonomous Driving</strong>
+          <div class="research-meta">In Review · CVPR 2026 · First Author</div>
+          <div class="muted">Scene reconstruction work for cloud-aided autonomous driving under bandwidth constraints.</div>
         </div>
-        <div class="info-card">
-          <h3>Perception & Embodied Intelligence</h3>
-          <ul class="list">
-            <li>Computer vision and 3D/4D scene understanding</li>
-            <li>Robotics-adjacent perception problems</li>
-            <li>Wireless / RF sensing for physical-world inference</li>
-          </ul>
+        <div class="research-item">
+          <strong>Towards a LLM & RAG-based Auto-completion Module in Visual Programming Tools</strong>
+          <div class="research-meta">Published · CAADRIA 2025 · First Author</div>
+          <div class="muted">Applied LLM and retrieval-augmented generation to improve intelligent assistance inside visual programming environments.</div>
+        </div>
+        <div class="research-item">
+          <strong>Practical Reflection Manipulation on mmWave-Based Physical Intrusion Detection</strong>
+          <div class="research-meta">Accepted · IEEE CNS 2025 · Co-First Author</div>
+          <div class="muted">Investigated physical intrusion detection through reflection-aware manipulation on mmWave sensing systems.</div>
+        </div>
+        <div class="research-item">
+          <strong>RF-Vision: Object Characterization using Radio Frequency Propagation in Wireless Digital Twin</strong>
+          <div class="research-meta">Published · IEEE ICC 2025 · Second Author</div>
+          <div class="muted">Object characterization through RF propagation modeling in wireless digital twin environments.</div>
         </div>
       </div>
     </section>
 
     <section id="projects" class="container">
-      <h2 class="section-title">Selected Projects</h2>
-      <p class="section-copy">Pulled from your public GitHub footprint and shaped into a recruiter-friendly narrative.</p>
-      <div class="grid-2">
-        <div class="info-card">
-          <div class="project-title">
-            <h3>LLM Evaluation Engine</h3>
-            <span class="tag">Python</span>
-          </div>
-          <p>An early-access 4D LLM evaluation engine focused on structured testing, benchmarking, and practical assessment workflows for large language model systems.</p>
-        </div>
-        <div class="info-card">
-          <div class="project-title">
-            <h3>2PC + Raft</h3>
-            <span class="tag">Java</span>
-          </div>
-          <p>A distributed systems project exploring transaction coordination and consensus concepts, useful for demonstrating strong systems fundamentals beyond pure AI work.</p>
-        </div>
-        <div class="info-card">
-          <div class="project-title">
-            <h3>BEV Research Artifacts</h3>
-            <span class="tag">Research</span>
-          </div>
-          <p>Work around BEVATT and BEVFormer-style replication, showing hands-on experience with modern perception pipelines and research reproduction.</p>
-        </div>
-        <div class="info-card">
-          <div class="project-title">
-            <h3>RF-Based Material / Object Detection</h3>
-            <span class="tag">Applied ML</span>
-          </div>
-          <p>Applied sensing and machine learning work using radio-frequency signals to characterize objects and materials in real environments.</p>
-        </div>
+      <div class="section-head">
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-copy">Projects that show both algorithmic depth and systems execution.</p>
       </div>
-    </section>
-
-    <section id="publications" class="container">
-      <h2 class="section-title">Recent Publications</h2>
-      <p class="section-copy">A couple of publication entries I could verify from public scholar data.</p>
       <div class="grid-2">
-        <div class="pub-item">
-          <strong>RF-Vision: Object Characterization Using Radio Frequency Propagation in Wireless Digital Twin</strong>
-          <div class="pub-meta">DR Sunday Amatare, Wentao Gao, Aavash Kharel, Raul Shakya, Mohammad Hasibur ... · ICC 2025</div>
+        <div class="project-item">
+          <strong>Game Agents in Overcooked (OpenAI Gym)</strong>
+          <div class="muted">Built and compared <strong>DQN</strong> and <strong>MADDPG</strong> for multi-agent collaboration, documenting the relative strengths of each approach under different game scenarios.</div>
         </div>
-        <div class="pub-item">
-          <strong>Practical Reflection Manipulation on mmWave-Based Physical Intrusion Detection</strong>
-          <div class="pub-meta">W Gao, A Akinwale, J Li, A Li, X Shang, Y Zhang, D Han · IEEE CNS 2025</div>
+        <div class="project-item">
+          <strong>MapReduce via 2PC / Raft Consensus Architecture</strong>
+          <div class="muted">Implemented a MapReduce-based e-commerce recommendation workflow using transaction coordination and consensus-style system design.</div>
+        </div>
+        <div class="project-item">
+          <strong>Compiler Implementation for Scala</strong>
+          <div class="muted">Designed grammar rules and actions for AST construction, added semantic analysis and type checking, and built intermediate code generation components.</div>
+        </div>
+        <div class="project-item">
+          <strong>GAGE: General AI Gauge Engine</strong>
+          <div class="muted">Built evaluation interfaces and execution infrastructure for modern AI benchmark tasks. <a href="https://github.com/HiThink-Research/GAGE" target="_blank" rel="noreferrer" style="color:#dff6ff;text-decoration:underline;">Open-source project</a>.</div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="container">
       <div class="card contact-box">
-        <h2 class="section-title">Let’s connect</h2>
-        <p class="section-copy" style="margin-bottom:0;">
-          Interested in research collaboration, internships, startup ideas, or technical conversations around AI systems and applied ML?
-          Reach out through GitHub or LinkedIn for now, or replace the email placeholder below with your preferred address.
-        </p>
-        <div class="contact-links">
-          <a class="btn primary" href="https://github.com/dextergao14" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/wentao-gao-23359b149/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn secondary" href="mailto:wentaog1477@gmail.com">wentaog1477@gmail.com</a>
+        <div class="section-head">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-copy">For public-facing safety, this page uses city-level location instead of a full street address. If you want, I can also add a downloadable PDF resume next.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="k">Location</div>
+            <div>Arlington, Texas</div>
+          </div>
+          <div class="contact-item">
+            <div class="k">Email</div>
+            <div><a href="mailto:wentaog1477@gmail.com">wentaog1477@gmail.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="k">LinkedIn</div>
+            <div><a href="https://www.linkedin.com/in/wentao-dexter-gao/" target="_blank" rel="noreferrer">linkedin.com/in/wentao-dexter-gao</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="k">GitHub</div>
+            <div><a href="https://github.com/Dextergao14/" target="_blank" rel="noreferrer">github.com/Dextergao14</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="k">Focus</div>
+            <div>AI Research · ML Engineering · Systems</div>
+          </div>
+          <div class="contact-item">
+            <div class="k">Open To</div>
+            <div>Internships, research collaborations, startup conversations</div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="container footer">
-    © 2026 Wentao Gao. Built to showcase research depth, engineering range, and builder energy.
+    © 2026 Wentao Gao — built to reflect real work, not generic filler.
   </footer>
 </body>
 </html>
